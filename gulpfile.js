@@ -184,14 +184,7 @@ gulp.task('usemin', function() {
     .pipe($.htmlReplace({
       'templates': '<script type="text/javascript" src="js/templates.js"></script>'
     }))
-    .pipe($.usemin({
-      css: [$.minifyCss(), 'concat'],
-      libs: [$.uglify()],
-      nonangularlibs: [$.uglify()],
-      angularlibs: [$.uglify()],
-      appcomponents: [$.uglify()],
-      mainapp: [$.uglify()]
-    }))
+    .pipe($.usemin())
     .pipe(gulp.dest('./_build/'));
 });
 
